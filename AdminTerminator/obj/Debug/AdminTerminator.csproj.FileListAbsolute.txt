@@ -1,0 +1,3 @@
+F:\Progra Avanzada\AdminTerminator\AdminTerminator\bin\Debug\AdminTerminator.exe.config
+D:\Progra Avanzada\AdminTerminator\AdminTerminator\bin\Debug\AdminTerminator.exe.config
+C:\Users\PCKYO\Desktop\AdminTerminator\AdminTerminator\bin\Debug\AdminTerminator.exe.config
