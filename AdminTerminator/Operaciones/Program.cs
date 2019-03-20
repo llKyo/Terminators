@@ -102,22 +102,45 @@ namespace AdminTerminator
             } while (error);
             //FIN TIPO
 
-            //AÑO DESTINO
+            //PRIORIDADBASE
 
+            //FIN PRIORIDADBASE
+
+            //OBJETIVO
+            do
+            {
+                error = false;
+            } while (error);
+            //FIN OBJETIVO
+
+            //AÑO DESTINO
             do
             {
                 try
                 {
                     error = false;
                     Console.Write("ingrese año de destino: ");
-                    añoDestino = 
+                    añoDestino = Int32.Parse(Console.ReadLine().Trim());
+                    if (1997 < añoDestino || añoDestino < 3000)
+                    {
+                        throw new Exception ();
+                    }
+                }
+                catch (FormatException ex)
+                {
+                    error = true;
+                    Console.WriteLine("[!] Debe ingresar un número");
                 }
                 catch (Exception ex)
                 {
                     error = true;
+                    Console.WriteLine("[!] El año de destino debe ser entre 1997 y 3000");
                 }
             } while (error);
-           //FIN AÑO DESTINO
+            //FIN AÑO DESTINO
+
+            
+
         }
     }
 }
