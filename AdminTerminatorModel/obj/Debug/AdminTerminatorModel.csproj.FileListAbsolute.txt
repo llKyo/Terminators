@@ -1,0 +1,5 @@
+C:\Users\Benja\Desktop\Terminators\AdminTerminatorModel\bin\Debug\AdminTerminatorModel.dll
+C:\Users\Benja\Desktop\Terminators\AdminTerminatorModel\bin\Debug\AdminTerminatorModel.pdb
+C:\Users\Benja\Desktop\Terminators\AdminTerminatorModel\obj\Debug\AdminTerminatorModel.csprojResolveAssemblyReference.cache
+C:\Users\Benja\Desktop\Terminators\AdminTerminatorModel\obj\Debug\AdminTerminatorModel.dll
+C:\Users\Benja\Desktop\Terminators\AdminTerminatorModel\obj\Debug\AdminTerminatorModel.pdb
