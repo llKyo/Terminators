@@ -3,3 +3,8 @@ C:\Users\Benja\Desktop\Terminators\AdminTerminatorModel\bin\Debug\AdminTerminato
 C:\Users\Benja\Desktop\Terminators\AdminTerminatorModel\obj\Debug\AdminTerminatorModel.csprojResolveAssemblyReference.cache
 C:\Users\Benja\Desktop\Terminators\AdminTerminatorModel\obj\Debug\AdminTerminatorModel.dll
 C:\Users\Benja\Desktop\Terminators\AdminTerminatorModel\obj\Debug\AdminTerminatorModel.pdb
+C:\Users\PCKYO\Desktop\Terminators\AdminTerminatorModel\bin\Debug\AdminTerminatorModel.dll
+C:\Users\PCKYO\Desktop\Terminators\AdminTerminatorModel\bin\Debug\AdminTerminatorModel.pdb
+C:\Users\PCKYO\Desktop\Terminators\AdminTerminatorModel\obj\Debug\AdminTerminatorModel.csprojResolveAssemblyReference.cache
+C:\Users\PCKYO\Desktop\Terminators\AdminTerminatorModel\obj\Debug\AdminTerminatorModel.dll
+C:\Users\PCKYO\Desktop\Terminators\AdminTerminatorModel\obj\Debug\AdminTerminatorModel.pdb

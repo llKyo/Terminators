@@ -37,7 +37,7 @@ namespace AdminTerminator
 
             Console.ForegroundColor = ConsoleColor.White;
             Console.BackgroundColor = ConsoleColor.DarkRed;
-            Console.WriteLine("---------- Ingrese Terminator ----------");
+            Console.WriteLine("---------- Ingrese Terminator ----------\n");
             Console.ResetColor();
 
             //NÚMERO DE SERIE

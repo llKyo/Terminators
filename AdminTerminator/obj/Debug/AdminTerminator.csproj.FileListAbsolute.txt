@@ -9,3 +9,11 @@ C:\Users\Benja\Desktop\Terminators\AdminTerminator\bin\Debug\AdminTerminatorMode
 C:\Users\Benja\Desktop\Terminators\AdminTerminator\bin\Debug\AdminTerminatorModel.pdb
 C:\Users\Benja\Desktop\Terminators\AdminTerminator\obj\Debug\AdminTerminator.exe
 C:\Users\Benja\Desktop\Terminators\AdminTerminator\obj\Debug\AdminTerminator.pdb
+C:\Users\PCKYO\Desktop\Terminators\AdminTerminator\bin\Debug\AdminTerminator.exe.config
+C:\Users\PCKYO\Desktop\Terminators\AdminTerminator\obj\Debug\AdminTerminator.exe
+C:\Users\PCKYO\Desktop\Terminators\AdminTerminator\obj\Debug\AdminTerminator.pdb
+C:\Users\PCKYO\Desktop\Terminators\AdminTerminator\bin\Debug\AdminTerminator.exe
+C:\Users\PCKYO\Desktop\Terminators\AdminTerminator\bin\Debug\AdminTerminator.pdb
+C:\Users\PCKYO\Desktop\Terminators\AdminTerminator\bin\Debug\AdminTerminatorModel.dll
+C:\Users\PCKYO\Desktop\Terminators\AdminTerminator\bin\Debug\AdminTerminatorModel.pdb
+C:\Users\PCKYO\Desktop\Terminators\AdminTerminator\obj\Debug\AdminTerminator.csprojResolveAssemblyReference.cache

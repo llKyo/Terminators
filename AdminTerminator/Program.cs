@@ -16,13 +16,24 @@ namespace AdminTerminator
         {
             bool continuar = true;
             Console.Clear();
+            //BANNER
+            Console.ForegroundColor = ConsoleColor.DarkRed;
+            Console.WriteLine(" _                      _             _             ");
+            Console.WriteLine("| |                    (_)           | |            ");
+            Console.WriteLine("| |_ ___ _ __ _ __ ___  _ _ __   __ _| |_ ___  _ __ ");
+            Console.WriteLine("| __/ _ \x005C '__| '_ ` _ \x005C| | '_ \x005C / _` | __/ _ \x005C| '__|");
+            Console.WriteLine("| ||  __/ |  | | | | | | | | | | (_| | || (_) | |   ");
+            Console.WriteLine(" \x005C__\x005C___|_|  |_| |_| |_|_|_| |_|\x005C__,_|\x005C__\x005C___/|_|   \n\n");
+            //FIN BANNER
             Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine("---------- TERMINATORS! ----------");
+            Console.WriteLine("----------------------------------------------------");
+            Console.WriteLine("                        MENU                        ");
+            Console.WriteLine("----------------------------------------------------\n");
             Console.WriteLine("1. Ingresar");
             Console.WriteLine("2. Mostrar");
             Console.WriteLine("3. Buscar");
             Console.WriteLine("0. Salir");
-            Console.Write("\nIngrese una Opción: ");
+            Console.Write("\nIngrese una Opción: \n> ");
             switch (Console.ReadLine().Trim())
             {
                 case "1":
