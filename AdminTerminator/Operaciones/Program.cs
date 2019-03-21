@@ -46,7 +46,7 @@ namespace AdminTerminator
             do
             {
                 errores = new List<String>();
-                Console.Write("Ingrese Número de Serie: ");
+                Console.Write("Ingrese Número de Serie:\n> ");
                 nroSerie = Console.ReadLine().Trim();
                 if (nroSerie.Length != 7)
                 {
@@ -82,7 +82,7 @@ namespace AdminTerminator
                 Console.WriteLine("3. T-1000");
                 Console.WriteLine("4. T-3000");
                 Console.WriteLine("------------------");
-                Console.Write("Ingrese Tipo: ");
+                Console.Write("Seleccione una Opción (1-4):\n> ");
                 switch (Console.ReadLine().Trim())
                 {
                     case "1":
@@ -111,7 +111,7 @@ namespace AdminTerminator
                 try
                 {
                     error = false;
-                    Console.Write("Ingrese Prioridad base: ");
+                    Console.Write("Ingrese Prioridad base:\n> ");
                     prioridadBase = Int32.Parse(Console.ReadLine().Trim());
                 }
                 catch (FormatException ex)
@@ -128,12 +128,12 @@ namespace AdminTerminator
                 error = false;
                 
             } while (error);
-            Console.Write("Ingrese objetivo: ");
+            Console.Write("Ingrese objetivo:\n> ");
             objetivo = Console.ReadLine().Trim();
             if (objetivo.ToLower() == "sarah connor")
             {
                 prioridadBase = 999;
-                Console.WriteLine("[•] La prioridad a cambiado a 999");
+                Console.WriteLine("[Alert] La prioridad a cambiado a 999");
             }
             //FIN OBJETIVO
 
@@ -143,7 +143,7 @@ namespace AdminTerminator
                 try
                 {
                     error = false;
-                    Console.Write("ingrese año de destino: ");
+                    Console.Write("Ingrese año de destino:\n> ");
                     añoDestino = Int32.Parse(Console.ReadLine().Trim());
                     if (1997 >= añoDestino || añoDestino >= 3000)
                     {
@@ -164,7 +164,14 @@ namespace AdminTerminator
                 , Objetivo = objetivo, AñoDestino = añoDestino};
 
             new TerminatorDAL().AgregarTerminator(t);
-            Console.WriteLine("\n[•] Terminator Ingresado.");
+            Console.WriteLine("\n\n---------- Resumen ----------\n");
+            Console.WriteLine("Nro de Serie  : "+ nroSerie);
+            Console.WriteLine("Tipo          : "+ tipo);
+            Console.WriteLine("Prioridad Base: "+ prioridadBase);
+            Console.WriteLine("Objetivo      : "+ objetivo);
+            Console.WriteLine("Año de Destino: "+ añoDestino);
+            Console.WriteLine("\n[Info] Terminator Ingresado.");
+            Console.WriteLine("\nPresione una tecla para continuar . . .");
             Console.ReadKey();
             
 
