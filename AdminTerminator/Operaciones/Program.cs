@@ -12,10 +12,21 @@ namespace AdminTerminator
     {
         static void MostrarTerminators()
         {
-            //TODO: Mejorar formato de tabla
             List<Terminator> terminators = new TerminatorDAL().ObtenerTerminators();
-            terminators.ForEach(t => Console.WriteLine(
-                "Número de Serie:{0} Tipo:{1} Objetivo:{2}", t.NroSerie, t.Tipo, t.Objetivo));
+            if (terminators.Count() != 0)
+            {
+                Console.BackgroundColor = ConsoleColor.DarkGreen;
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.WriteLine("{0,12}{1,10}{2,20}{3,17}{4,20}\n", "Nro de Serie", "Tipo", "Prioridad Base", "Objetivo", "Año de Destino");
+                Console.ResetColor();
+                Console.ForegroundColor = ConsoleColor.Green;
+                terminators.ForEach(t => Console.WriteLine(
+                    "{0,12}{1,10}{2,20}{3,17}{4,20}", t.NroSerie, t.Tipo, t.PrioridadBase, t.Objetivo, t.AñoDestino));
+            } else
+            {
+                Console.WriteLine("[Info] No hay ningún Terminatos ingresado.");
+            }
+            Console.WriteLine("\nPresione cualquier tecla para continuar . . .");
             Console.ReadKey();
         }
         static void BuscarTerminator()

@@ -16,6 +16,7 @@ namespace AdminTerminator
         {
             bool continuar = true;
             Console.Clear();
+            Console.ResetColor();
             //BANNER
             Console.ForegroundColor = ConsoleColor.DarkRed;
             Console.WriteLine(" _                      _             _             ");
