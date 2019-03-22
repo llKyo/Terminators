@@ -26,16 +26,25 @@ namespace AdminTerminator
             {
                 Console.WriteLine("[Info] No hay ningún Terminatos ingresado.");
             }
-            Console.WriteLine("\nPresione cualquier tecla para continuar . . .");
+            Console.Write("\nPresione cualquier tecla para continuar. . .");
             Console.ReadKey();
         }
         static void BuscarTerminator()
         {
-            Console.WriteLine("Ingrese nombre");
+            Console.WriteLine("Buscador de Terminator\n");
+            Console.Write("Ingrese el nro de serie:\n> ");
+            string nroSerie = Console.ReadLine().Trim();
+            Console.BackgroundColor = ConsoleColor.DarkGreen;
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine("\n{0,12}{1,10}{2,20}{3,17}{4,20}\n", "Nro de Serie", "Tipo", "Prioridad Base", "Objetivo", "Año de Destino");
+            Console.ResetColor();
+            Console.ForegroundColor = ConsoleColor.Green;
             new TerminatorDAL()
-                .FiltrarTerminator(Console.ReadLine().Trim())
+                .FiltrarTerminator(nroSerie)
                 .ForEach(t => Console.WriteLine(
-                    "Número de Serie:{0} Tipo:{1} Objetivo:{2}", t.NroSerie, t.Tipo, t.Objetivo));
+                    "{0,12}{1,10}{2,20}{3,17}{4,20}", t.NroSerie, t.Tipo, t.PrioridadBase, t.Objetivo, t.AñoDestino));
+            
+            Console.Write("\nPresione cualquier tecla para continuar. . .");
             Console.ReadKey();
         }
         static void IngresarTerminator()
@@ -182,7 +191,7 @@ namespace AdminTerminator
             Console.WriteLine("Objetivo      : "+ objetivo);
             Console.WriteLine("Año de Destino: "+ añoDestino);
             Console.WriteLine("\n[Info] Terminator Ingresado.");
-            Console.WriteLine("\nPresione una tecla para continuar . . .");
+            Console.Write("\nPresione una tecla para continuar. . .");
             Console.ReadKey();
             
 
