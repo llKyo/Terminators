@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace AdminTerminatorModel.DAL
 {
-    public class TerminatorDAL
+    public class TerminatorsDALObjetos
     {
         private static List<Terminator> terminators = new List<Terminator>();
         public void AgregarTerminator(Terminator t)
@@ -18,11 +18,14 @@ namespace AdminTerminatorModel.DAL
         {
             return terminators;
         }
-        public List<Terminator> FiltrarTerminator(string nroSerie)
+        public List<Terminator> FiltrarTerminator(string nroSerie, UInt32 añoDestino)
         {
-            return terminators.FindAll(p => p.NroSerie == nroSerie);
+            return terminators.FindAll(t => t.NroSerie == nroSerie && t.AñoDestino == añoDestino);
         }
-
+        public List<Terminator> BuscarTerminator(string nroSerie)
+        {
+            return terminators.FindAll(t => t.NroSerie == nroSerie);
+        }
         
     }
 }

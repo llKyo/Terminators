@@ -10,9 +10,10 @@ namespace AdminTerminator
 {
     public partial class Program
     {
+        static ITerminatorsDAL terminatorsDAL = new TerminatorsDALArchivos();
         static void MostrarTerminators()
         {
-            List<Terminator> terminators = new TerminatorDAL().ObtenerTerminators();
+            List<Terminator> terminators = terminatorsDAL.ObtenerTerminators();
             if (terminators.Count() != 0)
             {
                 Console.BackgroundColor = ConsoleColor.DarkGreen;
@@ -30,22 +31,50 @@ namespace AdminTerminator
             Console.ReadKey();
         }
         static void BuscarTerminator()
-        {
-            Console.WriteLine("Buscador de Terminator\n");
-            Console.Write("Ingrese el nro de serie:\n> ");
-            string nroSerie = Console.ReadLine().Trim();
-            Console.BackgroundColor = ConsoleColor.DarkGreen;
-            Console.ForegroundColor = ConsoleColor.White;
-            Console.WriteLine("\n{0,12}{1,10}{2,20}{3,17}{4,20}\n", "Nro de Serie", "Tipo", "Prioridad Base", "Objetivo", "Año de Destino");
-            Console.ResetColor();
-            Console.ForegroundColor = ConsoleColor.Green;
-            new TerminatorDAL()
-                .FiltrarTerminator(nroSerie)
-                .ForEach(t => Console.WriteLine(
-                    "{0,12}{1,10}{2,20}{3,17}{4,20}", t.NroSerie, t.Tipo, t.PrioridadBase, t.Objetivo, t.AñoDestino));
-            
-            Console.Write("\nPresione cualquier tecla para continuar. . .");
-            Console.ReadKey();
+        { 
+            bool error = false;
+            do
+            {
+                try
+                {
+                    error = false;
+                    Console.WriteLine("Buscador de Terminator\n");
+                    Console.Write("Ingrese el nro de serie:\n> ");
+                    string nroSerie = Console.ReadLine().Trim();
+                    Console.Write("Ingrese el año de destino:\n> ");
+                    UInt32 añoDestino = UInt32.Parse(Console.ReadLine().Trim());
+                    List<Terminator> terminators = terminatorsDAL.FiltrarTerminator(nroSerie, añoDestino);
+                    if(terminators.Count() == 0)
+                    {
+                        throw new Exception();
+                    }
+                    Console.BackgroundColor = ConsoleColor.DarkGreen;
+                    Console.ForegroundColor = ConsoleColor.White;
+                    Console.WriteLine("\n{0,12}{1,10}{2,20}{3,17}{4,20}\n", "Nro de Serie", "Tipo", "Prioridad Base", "Objetivo", "Año de Destino");
+                    Console.ResetColor();
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    terminators.ForEach(t => Console.WriteLine(
+                            "{0,12}{1,10}{2,20}{3,17}{4,20}", t.NroSerie, t.Tipo, t.PrioridadBase, t.Objetivo, t.AñoDestino));
+
+                    Console.Write("\nPresione cualquier tecla para continuar. . .");
+                    Console.ReadKey();
+                }
+                catch (FormatException ex)
+                {
+                    Console.WriteLine("\n[!] Error: Debe ingresar un número en año de destino.");
+                    Console.Write("Presione cualquier tecla para reintentar. . .");
+                    Console.ReadKey();
+                    Console.Clear();
+                    error = true;
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("\n[!] Info: No se a encontrado ningún Terminator.");
+                    Console.Write("Presione cualquier tecla para volver al menú principal. . .");
+                    Console.ReadKey();
+                    Console.Clear();
+                }
+            } while (error);
         }
         static void IngresarTerminator()
         {
@@ -74,7 +103,7 @@ namespace AdminTerminator
                     
                 }
                 
-                if (new TerminatorDAL().FiltrarTerminator(nroSerie).Count() != 0)
+                if (terminatorsDAL.BuscarTerminator(nroSerie).Count() != 0)
                 {
                     errores.Add("[!] Error: El terminator Existe");
                    
@@ -183,7 +212,7 @@ namespace AdminTerminator
                 NroSerie = nroSerie, Tipo = tipo, PrioridadBase = prioridadBase
                 , Objetivo = objetivo, AñoDestino = añoDestino};
 
-            new TerminatorDAL().AgregarTerminator(t);
+            terminatorsDAL.AgregarTerminator(t);
             Console.WriteLine("\n\n---------- Resumen ----------\n");
             Console.WriteLine("Nro de Serie  : "+ nroSerie);
             Console.WriteLine("Tipo          : "+ tipo);

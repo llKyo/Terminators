@@ -40,7 +40,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DAL\TerminatorDAL.cs" />
+    <Compile Include="DAL\ITerminatorsDAL.cs" />
+    <Compile Include="DAL\TerminatorsDALArchivos.cs" />
+    <Compile Include="DAL\TerminatorsDALObjetos.cs" />
     <Compile Include="DTO\Terminator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
